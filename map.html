@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sotto MAP</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="./JS/index-yoshizawa.js" defer></script>
+    <link rel="stylesheet" href="./sass/style-yoshizawa.css">
+</head>
+
+<body class="map__page">
+    <header class="map__header">
+        <h1 class="map__title">マップ</h1>
+    </header>
+    <main class="map">
+
+        <div id="map" class="map__canvas"></div>
+
+        <div class="map__search">
+            <input class="map__search-input" type="search" placeholder="場所や施設名を検索">
+        </div>
+
+        <!-- マップの上に表示する詳細 -->
+        <section class="map__detail" id="location-detail" hidden>
+            <button class="map__detail-close" id="location-detail-close" type="button" aria-label="詳細を閉じる">
+                ×
+            </button>
+
+            <h2 class="map__detail-title" id="location-detail-name"></h2>
+
+            <dl class="map__detail-info">
+
+                <div class="map__detail-item">
+                    <dt>営業時間</dt>
+                    <dd id="location-detail-hours"></dd>
+                </div>
+
+                <div class="map__detail-item">
+                    <dt>住所</dt>
+                    <dd id="location-detail-address"></dd>
+                </div>
+
+                <div class="map__detail-item">
+                    <dt>在庫</dt>
+                    <dd id="location-detail-stock"></dd>
+                </div>
+
+            </dl>
+
+            <button class="map__button" id="location-detail-map-button" type="button">
+                マップアプリで表示
+            </button>
+        </section>
+
+    </main>
+</body>
+
+</html>
