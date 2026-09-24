@@ -231,3 +231,11 @@ if ("geolocation" in navigator) {
     );
 
 }
+
+map.on("click", () => {
+
+    detail.hidden = true;
+
+    selectedLocation = null;
+
+});
