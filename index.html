@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ホーム</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
     <link rel="stylesheet" href="./css/style-amano.css">
 </head>
@@ -18,33 +18,72 @@
     </header>
     <main class="main">
         <div class="main__inner">
-            <section class="main__banner"></section>
+            <div class="main__banner"></div>
             <section class="main__info">
                 <div class="main__grid">
                     <div class="main__unit">
                         <p class="main__unit-text">
                             残り時間
                         </p>
-                        <span class="main__unit-time">5:00</span>
+                        <span class="main__unit-time" id="timer">5:00</span>
                     </div>
                     <div class="main__methods">
-                        <div class="main__method">取り出す方法</div>
-                        <div class="main__method">取り出す方法</div>
+                        <button type="button" class="main__method">取り出す方法</button>
+                        <button type="button" class="main__method">取り出す方法</button>
                     </div>
                 </div>
                 <p class="main__notice">
                     ※なんか文章を書こう。なんか文章を書こう。なんか文章を書こう。なんか文章を書こう。なんか文章を書こう。なんか文章を書こう。
                 </p>
                 <div class="main__takeout">
-                    <button class="main__takeout-btn">sottoから取り出す</button>
+                    <button type="button" class="main__takeout-btn">sottoから取り出す</button>
                 </div>
                 <p class="main__notice">
                     ※なんか注意点をかこう。なんか注意点をかこう。
                 </p>
             </section>
-            <section class="main__banner"></section>
+            <div class="main__banner"></div>
         </div>
     </main>
+
+    <div class="main__method-modal" id="method-modal" hidden>
+        <div class="main__method-modal-content" role="dialog" aria-modal="true" aria-labelledby="method-modal-title">
+            <button type="button" class="main__method-modal-close" aria-label="閉じる">×</button>
+
+            <h2 class="main__method-modal-title" id="method-modal-title">取り出す方法</h2>
+
+            <div class="main__method-slides" aria-live="polite">
+                <section class="main__method-slide is-active">
+                    <p>1ページ目の説明を書きます。</p>
+                </section>
+                <section class="main__method-slide">
+                    <p>2ページ目の説明を書きます。</p>
+                </section>
+                <section class="main__method-slide">
+                    <p>3ページ目の説明を書きます。</p>
+                </section>
+            </div>
+
+            <div class="main__method-modal-controls">
+                <div class="main__method-dots" aria-label="ページ">
+                    <span class="main__method-dot is-active"></span>
+                    <span class="main__method-dot"></span>
+                    <span class="main__method-dot"></span>
+                </div>
+
+                <button type="button" class="main__method-next">次へ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="qr-modal" id="qr-modal" hidden>
+        <div class="qr-modal__content" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
+            <button type="button" class="qr-modal__close" aria-label="閉じる">×</button>
+            <h2 class="qr-modal-h2" id="qr-modal-h2">QRコードを<br>スキャンしてください</h2>
+            <img src="./images/qrcode_www.kagome.co.jp.png" alt="読み取り用QRコード">
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer__inner">
             <nav class="footer__nav">
@@ -52,21 +91,23 @@
                     <li class="footer__item">
                         <a href="#" class="footer__item-link">
                             <img src="./images/kanitama.jpg" alt="" class="footer__item-icon">
-                            <span>マップ</span>
+                            <span class="footer__name">マップ</span>
                         </a>
                     </li>
 
-                    <li class="footer__item footer__item--home">
+                    <li class="footer__item-home">
                         <a href="#" class="footer__item-link">
-                            <img src="./images/kanitama.jpg" alt="" class="footer__item-icon">
-                            <span>ホーム</span>
+                            <div class="footer__home-icon">
+                                <img src="./images/kanitama.jpg" alt="">
+                                <span class="footer__name">ホーム</span>
+                            </div>
                         </a>
                     </li>
 
                     <li class="footer__item">
                         <a href="#" class="footer__item-link">
                             <img src="./images/kanitama.jpg" alt="" class="footer__item-icon">
-                            <span>マイページ</span>
+                            <span class="footer__name">マイページ</span>
                         </a>
                     </li>
                 </ul>
