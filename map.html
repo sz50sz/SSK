@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
     <script src="./JS/index-yoshizawa.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
     <link rel="stylesheet" href="./sass/style-yoshizawa.css">
 </head>
 
 <body class="map__page">
-    <header class="map__header">
-        <h1 class="map__title">マップ</h1>
-    </header>
+
     <main class="map">
+
+        <button class="map__back" id="map-back" type="button" aria-label="マップに戻る">
+            ＜
+        </button>
 
         <div id="map" class="map__canvas"></div>
 
@@ -23,8 +26,8 @@
             <input class="map__search-input" type="search" placeholder="場所や施設名を検索">
         </div>
 
-        <!-- マップの上に表示する詳細 -->
         <section class="map__detail" id="location-detail" hidden>
+
             <button class="map__detail-close" id="location-detail-close" type="button" aria-label="詳細を閉じる">
                 ×
             </button>
@@ -34,17 +37,17 @@
             <dl class="map__detail-info">
 
                 <div class="map__detail-item">
-                    <dt>営業時間</dt>
+                    <dt>⭐️</dt>
                     <dd id="location-detail-hours"></dd>
                 </div>
 
                 <div class="map__detail-item">
-                    <dt>住所</dt>
+                    <dt>⭐️</dt>
                     <dd id="location-detail-address"></dd>
                 </div>
 
                 <div class="map__detail-item">
-                    <dt>在庫</dt>
+                    <dt>⭐️</dt>
                     <dd id="location-detail-stock"></dd>
                 </div>
 
@@ -53,9 +56,11 @@
             <button class="map__button" id="location-detail-map-button" type="button">
                 マップアプリで表示
             </button>
+
         </section>
 
     </main>
+
 </body>
 
 </html>

@@ -61,8 +61,12 @@ const detailMapButton =
     document.querySelector("#location-detail-map-button");
 
 
-// 現在選択している設置場所
-let selectedLocation = null;
+// =========================================================
+// 戻るボタン
+// =========================================================
+
+const backButton =
+    document.querySelector("#map-back");
 
 
 // =========================================================
@@ -104,12 +108,9 @@ function showLocationDetail(location) {
     detailAddress.textContent =
         location.address;
 
-
     detailStock.textContent =
         `${location.stock} ${getStockText(location.stock)}`;
 
-
-    // 在庫状態によってクラスを変更
     detailStock.className =
         `map__detail-stock map__detail-stock--${location.stock}`;
 
@@ -117,6 +118,8 @@ function showLocationDetail(location) {
     // 詳細パネルを表示
     detail.hidden = false;
 
+    // 戻るボタンを表示
+    backButton.style.display = "flex";
 }
 
 
@@ -124,17 +127,29 @@ function showLocationDetail(location) {
 // 詳細を閉じる
 // =========================================================
 
+function closeLocationDetail() {
+
+    detail.hidden = true;
+
+    selectedLocation = null;
+}
+
+// 詳細パネルの ×
 detailClose.addEventListener(
     "click",
     () => {
-
-        detail.hidden = true;
-
-        selectedLocation = null;
-
+        closeLocationDetail();
     }
 );
 
+
+// 戻るボタン
+backButton.addEventListener(
+    "click",
+    () => {
+        closeLocationDetail();
+    }
+);
 
 // =========================================================
 // Google Mapsで表示
@@ -234,8 +249,6 @@ if ("geolocation" in navigator) {
 
 map.on("click", () => {
 
-    detail.hidden = true;
-
-    selectedLocation = null;
+    closeLocationDetail();
 
 });

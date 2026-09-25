@@ -85,6 +85,7 @@ body {
     font-family: $font-family-gothic;
     color: $color-text;
     background-color: #fff;
+    position: relative;
 }
 
 
@@ -95,22 +96,40 @@ body {
 .map__header {
     width: 100%;
     max-width: 480px;
-    height: rem(60);
-    margin: 0 auto;
-    padding: rem(45) 0 rem(15) 0;
-    display: flex;
-    align-items: center;
-    background-color: #d9d9d9;
-}
-
-.map__title {
     margin-right: auto;
     margin-left: auto;
-    font-size: rem(20);
-    font-weight: 700;
-    line-height: 1.4;
 }
 
+
+.map__back {
+    position: absolute;
+    top: rem(50);
+    left: rem(15);
+    z-index: 200;
+    width: rem(45);
+    height: rem(45);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #fff;
+    color: #000;
+
+    font-size: rem(24);
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
 
 // =================================================================
 //  Map
@@ -122,11 +141,9 @@ body {
 
 .map {
     position: relative;
-
     width: 100%;
     max-width: 480px;
-
-    height: calc(100dvh - rem(120));
+    height: 100dvh;
 
     margin: 0 auto;
 
@@ -147,19 +164,30 @@ body {
 
 .map__detail {
     position: absolute;
-
+    font-size: rem(16);
     left: 0;
     right: 0;
     bottom: 0;
     padding: rem(30) rem(20);
     z-index: 1000;
-    border-radius: rem(25) rem(25) 0 0;
+    border-radius: 25px 25px 0 0;
 
     background-color: #fff;
 
     box-sizing: border-box;
 
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+
+    &-title {
+        font-size: rem(18);
+        font-weight: bold;
+        margin-top: rem(30);
+        margin-bottom: rem(15);
+    }
+
+    &-item {
+        display: flex;
+    }
 
     &-close {
         display: block;
@@ -182,7 +210,7 @@ body {
 
 .map__button {
     display: block;
-
+    text-align: center;
     width: 100%;
 
     margin-top: rem(20);
@@ -191,7 +219,7 @@ body {
     box-sizing: border-box;
 
     border: none;
-    border-radius: rem(25);
+    border-radius: rem(100);
 
     background-color: #f1f1f1;
 
@@ -218,4 +246,108 @@ body {
 
 .map__detail[hidden] {
     display: none;
+}
+
+
+
+// =================================================================
+//  Header
+// =================================================================
+
+.news__header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 500;
+    width: 100%;
+    max-width: 480px;
+    height: rem(100);
+    margin: 0 auto;
+    padding: rem(45) 0 rem(15) 0;
+    display: flex;
+    align-items: center;
+    background-color: #d9d9d9;
+}
+
+.news__title {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: rem(20);
+    font-weight: bold;
+}
+
+
+.news {
+    width: 100%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: rem(150);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__list {
+        display: grid;
+        grid-template-rows: auto;
+        row-gap: rem(20);
+    }
+
+    &__item {
+        display: block;
+        border-bottom: 1px solid #dddddd;
+        padding-bottom: rem(20);
+    }
+}
+
+.article {
+    &__detail {
+        display: flex;
+        align-items: center;
+        column-gap: rem(10);
+        margin-bottom: rem(15);
+    }
+
+    &__tag {
+        background-color: #d9d9d9;
+        padding: rem(5) rem(10);
+        border-radius: rem(30);
+    }
+
+    &__title {
+        font-size: rem(18);
+        font-weight: bold;
+    }
+
+    &__page {
+        width: 100%;
+        max-width: 480px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &__inner {
+        @include inner();
+        margin-top: rem(130);
+    }
+
+    &__text {
+        margin-top: rem(30);
+        line-height: 1.5;
+    }
+}
+
+
+
+// =================================================================
+//  start
+// =================================================================
+
+.start {
+    width: 100%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
 }
