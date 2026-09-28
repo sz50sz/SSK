@@ -104,6 +104,7 @@ img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  background-color: #FFD873;
 }
 .footer__home-icon img {
   display: block;
