@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sotto MAP</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="./JS/index-yoshizawa.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="./sass/style-yoshizawa.css">
+</head>
+
+<body class="login">
+    <header class="login__header">
+        <div class="login__header__inner">
+            <a href="#" class="login__header__back"></a>
+            <div class="login__header__logo"><img src="" alt=""></div>
+        </div>
+    </header>
+    <main class="login__main">
+        <div class="login__inner">
+            <h1 class="login__title">新規登録</h1>
+            <form class="login__form">
+                <div class="login__form__item">
+                    <label for="email" class="login__form__label">
+                        メールアドレス
+                        <span class="login__form__required">必須</span>
+                    </label>
+                    <input type="email" id="email" name="email" class="login__form__input"
+                        placeholder="konnichiwa.0000@gmail.com">
+                </div>
+                <div class="login__form__item">
+                    <label for="password" class="login__form__label">
+                        パスワード
+                        <span class="login__form__required">必須</span>
+                    </label>
+                    <input type="password" id="password" name="password" class="login__form__input">
+                </div>
+                <div class="login__form__item">
+                    <label for="password-confirm" class="login__form__label">
+                        パスワード確認
+                        <span class="login__form__required">必須</span>
+                    </label>
+                    <input type="password" id="password-confirm" name="password-confirm" class="login__form__input">
+                </div>
+                <div class="login__form__item">
+                    <label for="name" class="login__form__label">
+                        名前
+                        <span class="login__form__required">必須</span>
+                    </label>
+                    <input type="text" id="name" name="name" class="login__form__input" placeholder="こんにちは">
+                </div>
+                <a href="./index.html" type="submit" class="login__form__button">
+                    登録する
+                </a>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
