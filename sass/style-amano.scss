@@ -431,6 +431,7 @@ img {
         font-weight: bold;
     }
 
+    // モーダルボタン
     &__back-button {
         display: inline-block;
         width: 14px;
@@ -605,5 +606,70 @@ img {
 
     &__new {
         margin-top: 60px;
+    }
+
+    &__list {
+        display: grid;
+        gap: 30px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    &__text {
+        margin: 0;
+    }
+
+    &__set {
+        display: inline-flex;
+        flex: 0 0 auto;
+        cursor: pointer;
+
+        &-input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+
+            &:checked+.rm__set-switch {
+                background: #FFD873;
+            }
+
+            &:checked+.rm__set-switch::before {
+                transform: translateX(17px);
+            }
+
+            &:focus-visible+.rm__set-switch {
+                outline: 2px solid #492F04;
+                outline-offset: 3px;
+            }
+        }
+
+        &-switch {
+            position: relative;
+            display: block;
+            width: 55px;
+            height: 30px;
+            border-radius: 999px;
+            background-color: #492F04;
+            border: 1px solid #492F04;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 2.5px;
+                left: 4px;
+                width: 30px;
+                height: 23px;
+                border-radius: 999px;
+                background-color: #fff;
+                border: 1px solid #492F04;
+                transition: transform 0.2s;
+            }
+        }
     }
 }
