@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登録情報</title>
+    <title>メールアドレス変更</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="./css/style-amano.css">
@@ -20,42 +20,15 @@
 
     <main class="rm">
         <div class="rm__inner">
-            <h2 class="rm__title">登録情報</h2>
-            <div class="rm__unit">
-                <a href="./name-change.html">
-                    <p class="rm__unit-label">
-                        名前
-                    </p>
-                    <div class="rm__unit-input">
-                        <p>折尾 玲</p>
-                    </div>
-                </a>
+            <div class="rm__choice">
+                <button class="rm__choice-cancel"><a href="./register.html">キャンセル</a></button>
+                <button class="rm__choice-done">保存</button>
             </div>
-
             <div class="rm__unit">
-                <a href="./mail-change.html">
-                    <p class="rm__unit-label">
-                        メールアドレス
-                    </p>
-                    <div class="rm__unit-input">
-                        <p>konnichiwa.0000@gmail.com</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="rm__unit">
-                <a href="./password-change.html">
-                    <p class="rm__unit-label">
-                        パスワード
-                    </p>
-                    <div class="rm__unit-input">
-                        <p>⭐️⭐️⭐️⭐️</p>
-                    </div>
-                </a>
-            </div>
-            <div class="rm__btns">
-                <a href="#" class="rm__btns-logout rm__btns-btn">ログアウト</a>
-                <a href="#" class="rm__btns-delete rm__btns-btn">退会</a>
+                <p class="rm__unit-label">
+                    メールアドレス
+                </p>
+                <input type="text" class="rm__unit-input" placeholder="konnichiwa.0000@gmail.com">
             </div>
         </div>
     </main>
