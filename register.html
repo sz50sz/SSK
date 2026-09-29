@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マイページ</title>
+    <title>登録情報</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="./css/style-amano.css">
 </head>
 
-<body class="mp">
+<body class="mr">
     <header class="mh">
         <div class="mh__inner">
             <p class="mh__return">＜</p>
@@ -18,49 +18,45 @@
         </div>
     </header>
 
-    <main class="mm">
-        <div class="mm__inner">
-            <section class="mm__unit">
-                <ul class="mm__list">
-                    <li class="mm__item">
-                        <a href="#" class="mm__link">
-                            <div class="mm__item-unit">
-                                <i class="fa-solid fa-gear mm__icon"></i>
-                                <p class="mm__name">登録情報</p>
-                            </div>
-                            <p class="mm__next">＞</p>
-                        </a>
-                    </li>
-                    <li class="mm__item">
-                        <a href="#" class="mm__link">
-                            <div class="mm__item-unit">
-                                <i class="fa-solid fa-bell mm__icon"></i>
-                                <p class="mm__name">通知設定</p>
-                            </div>
-                            <p class="mm__next">＞</p>
-                        </a>
-                    </li>
-                    <li class="mm__item">
-                        <a href="#" class="mm__link">
-                            <div class="mm__item-unit">
-                                <i class="fa-solid fa-circle-question mm__icon"></i>
+    <main class="rm">
+        <div class="rm__inner">
+            <h2 class="rm__title">登録情報</h2>
+            <div class="rm__unit">
+                <a href="./name-change.html">
+                    <p class="rm__unit-label">
+                        名前
+                    </p>
+                    <div class="rm__unit-input">
+                        <p>折尾 玲</p>
+                    </div>
+                </a>
+            </div>
 
-                                <p class="mm__name">ヘルプ</p>
-                            </div>
-                            <p class="mm__next">＞</p>
-                        </a>
-                    </li>
-                    <li class="mm__item">
-                        <a href="#" class="mm__link">
-                            <div class="mm__item-unit">
-                                <i class="fa-solid fa-comment mm__icon"></i>
-                                <p class="mm__name">お問い合わせ</p>
-                            </div>
-                            <p class="mm__next">＞</p>
-                        </a>
-                    </li>
-                </ul>
-            </section>
+            <div class="rm__unit">
+                <a href="./mail-change.html">
+                    <p class="rm__unit-label">
+                        メールアドレス
+                    </p>
+                    <div class="rm__unit-input">
+                        <p>konnichiwa.0000@gmail.com</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="rm__unit">
+                <a href="./password-change.html">
+                    <p class="rm__unit-label">
+                        パスワード
+                    </p>
+                    <div class="rm__unit-input">
+                        <p>⭐️⭐️⭐️⭐️</p>
+                    </div>
+                </a>
+            </div>
+            <div class="rm__btns">
+                <a href="#" class="rm__btns-logout rm__btns-btn">ログアウト</a>
+                <a href="#" class="rm__btns-delete rm__btns-btn">退会</a>
+            </div>
         </div>
     </main>
 
@@ -94,6 +90,7 @@
             </nav>
         </div>
     </footer>
+    <script src="./JS/index-amano.js"></script>
 </body>
 
 </html>
