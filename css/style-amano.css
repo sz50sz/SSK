@@ -334,6 +334,14 @@ img {
   font-size: 1.25rem;
   font-weight: bold;
 }
+.mh__back-button {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
 
 .mm__inner {
   max-width: 1000px;

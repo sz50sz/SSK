@@ -428,6 +428,15 @@ img {
         font-size: rem(20);
         font-weight: bold;
     }
+
+    &__back-button {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-left: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg);
+    }
 }
 
 .mm {
