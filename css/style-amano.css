@@ -321,6 +321,8 @@ img {
   margin-left: auto;
   margin-right: auto;
   padding: 50px 0 30px 0;
+}
+.mh__unit {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -333,6 +335,14 @@ img {
   grid-column: 2;
   font-size: 1.25rem;
   font-weight: bold;
+}
+.mh__back-button {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
 }
 
 .mm__inner {
@@ -358,6 +368,14 @@ img {
 }
 .mm__icon {
   color: #492F04;
+}
+.mm__next {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(225deg);
 }
 
 .rm__inner {

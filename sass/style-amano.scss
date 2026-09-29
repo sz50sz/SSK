@@ -411,8 +411,10 @@ img {
 
     &__inner {
         @include inner();
-
         padding: 50px 0 30px 0;
+    }
+
+    &__unit {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
         align-items: center;
@@ -429,6 +431,14 @@ img {
         font-weight: bold;
     }
 
+    &__back-button {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-left: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg);
+    }
 
 }
 
@@ -459,6 +469,15 @@ img {
 
     &__icon {
         color: #492F04;
+    }
+
+    &__next {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-left: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(225deg);
     }
 }
 
