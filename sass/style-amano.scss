@@ -108,10 +108,18 @@ img {
     }
 
     /* お知らせボタン */
-    &__btn-notice {
-        grid-column: 3;
-        font-size: rem(22);
-        justify-self: end;
+    &__news {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #492F04;
+        border-radius: 50px;
+        margin-left: auto;
+
+        &-pic {
+            width: 20px;
+        }
     }
 }
 
@@ -274,9 +282,34 @@ img {
         position: absolute;
         top: 15px;
         right: 19px;
-        font-size: 28px;
-        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background-color: #6B8476;
         cursor: pointer;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            border-radius: 1px;
+            background-color: #FCF9F5;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
     }
 
     &__method-modal-controls {
@@ -293,13 +326,16 @@ img {
     }
 
     &__method-dot {
+        display: block;
+        flex: 0 0 8px;
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: #ccc;
+        background-color: #492F04;
+        opacity: 0.3;
 
         &.is-active {
-            background: #333;
+            opacity: 1;
         }
     }
 
@@ -311,13 +347,32 @@ img {
         }
     }
 
-    &__method-next {
+    &__method-btns {
+        display: flex;
+        column-gap: 15px;
         width: 100%;
-        padding: rem(12) rem(24);
+    }
+
+    &__method-back,
+    &__method-next {
+        flex: 1;
+        padding: 15px 20px;
         border-radius: 100rem;
-        background: #f5f5f5;
+        border: 1px solid #492F04;
         cursor: pointer;
         text-align: center;
+    }
+
+    &__method-back {
+        background-color: #FCF9F5;
+    }
+
+    &__method-next {
+        background-color: #FCF9F5;
+
+        &.is-complete {
+            background-color: #FFD66B;
+        }
     }
 
     /* 注意書き */

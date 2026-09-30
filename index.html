@@ -13,7 +13,9 @@
     <header class="header">
         <div class="header__inner">
             <div class="header__logo">sotto<img src="" alt="" class="header__logo-pic"></div>
-            <button class="header__btn-notice">🔔</button>
+            <a class="header__news" href="./news.html" aria-label="お知らせ">
+                <img class="header__news-pic" src="./images/news-icon.webp" alt="">
+            </a>
         </div>
     </header>
     <main class="main">
@@ -48,7 +50,7 @@
 
     <div class="main__method-modal" id="method-modal" hidden>
         <div class="main__method-modal-content" role="dialog" aria-modal="true" aria-labelledby="method-modal-title">
-            <button type="button" class="main__method-modal-close" aria-label="閉じる">×</button>
+            <button type="button" class="main__method-modal-close" aria-label="閉じる"></button>
 
             <h2 class="main__method-modal-title" id="method-modal-title">取り出す方法</h2>
 
@@ -65,13 +67,17 @@
             </div>
 
             <div class="main__method-modal-controls">
+
                 <div class="main__method-dots" aria-label="ページ">
                     <span class="main__method-dot is-active"></span>
                     <span class="main__method-dot"></span>
                     <span class="main__method-dot"></span>
                 </div>
+                <div class="main__method-btns">
+                    <button type="button" class="main__method-back">戻る</button>
 
-                <button type="button" class="main__method-next">次へ</button>
+                    <button type="button" class="main__method-next">次へ</button>
+                </div>
             </div>
         </div>
     </div>
@@ -91,7 +97,7 @@
                     <li class="footer__item">
                         <a href="./map.html" class="footer__item-link">
 
-                            <img src="./images/map.webp" alt="" class="footer__item-icon">
+                            <img src="./images/map.webp" alt="マップのアイコン" class="footer__item-icon">
                             <span class="footer__name">マップ</span>
                         </a>
                     </li>
@@ -99,7 +105,7 @@
                     <li class="footer__item-home">
                         <a href="./index.html" class="footer__item-link">
                             <div class="footer__home-icon">
-                                <img src="./images/home.webp" alt="">
+                                <img src="./images/home.webp" alt="ホームのアイコン">
                                 <span class="footer__name">ホーム</span>
                             </div>
                         </a>
@@ -108,7 +114,7 @@
                     <li class="footer__item">
                         <a href="./mypage.html" class="footer__item-link">
 
-                            <img src="./images/mypage.webp" alt="" class="footer__item-icon">
+                            <img src="./images/mypage.webp" alt="マイページのアイコン" class="footer__item-icon">
                             <span class="footer__name">マイページ</span>
                         </a>
                     </li>
@@ -116,6 +122,7 @@
             </nav>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="./JS/qr-code.js"></script>
     <script src="./JS/index-amano.js"></script>
 </body>
