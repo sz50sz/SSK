@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style-amano.css">
+</head>
+
+<body class="mr">
+    <header class="mh">
+        <div class="mh__inner">
+            <a href="./mypage.html" class="mh__unit">
+                <button class="mh__back-button" type="button" aria-label="戻る">
+                    <span aria-hidden="true"></span>
+                </button>
+
+                <h1 class="mh__title">マイページ</h1>
+            </a>
+        </div>
+    </header>
+
+    <main class="ct">
+        <div class="ct__inner">
+            <h2 class="ct__title">お問い合わせ</h2>
+
+            <form class="ct__form">
+                <div class="ct__unit">
+                    <label class="ct__unit-label" for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" class="ct__unit-input" placeholder="メールアドレスを入力してください" />
+                </div>
+
+                <div class="ct__contents">
+                    <label class="ct__unit-content" for="content">内容</label>
+                    <textarea id="content" name="content" class="ct__unit-contentbox"
+                        placeholder="内容を入力してください"></textarea>
+                </div>
+
+                <button class="ct__btn" type="submit">送信</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <nav class="footer__nav">
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="./map.htmls" class="footer__item-link">
+
+                            <img src="./images/map.webp" alt="マップのアイコン" class="footer__item-icon">
+                            <span class="footer__name">マップ</span>
+                        </a>
+                    </li>
+
+                    <li class="footer__item-home">
+                        <a href="./index.html" class="footer__item-link">
+
+                            <div class="footer__home-icon">
+                                <img src="./images/home.webp" alt="ホームのアイコン">
+                                <span class="footer__name">ホーム</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="footer__item">
+                        <a href="./mypage.html" class="footer__item-link">
+
+                            <img src="./images/mypage-color.webp" alt="マイページのアイコン" class="footer__item-icon">
+                            <span class="footer__name">マイページ</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script src="./JS/index-amano.js"></script>
+</body>
+
+</html>

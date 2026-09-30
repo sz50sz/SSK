@@ -1,53 +1,29 @@
-// QRコードのモーダルウィンドウ
-const openButton = document.querySelector(".main__takeout-btn");
-const modal = document.querySelector("#qr-modal");
-const closeButton = document.querySelector(".qr-modal__close");
-
-openButton.addEventListener("click", () => {
-    modal.hidden = false;
-});
-
-closeButton.addEventListener("click", () => {
-    modal.hidden = true;
-});
-
-modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        modal.hidden = true;
-    }
-});
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !modal.hidden) {
-        modal.hidden = true;
-    }
-});
-
-
-// 次受け取れるまでの残り時間
+// 次に受け取れるまでの残り時間
 const timer = document.querySelector("#timer");
-const duration = 5 * 60; // 5時間を分に換算
-const startedAt = Date.now();
 
-function updateTimer() {
-    const elapsedMinutes = Math.floor((Date.now() - startedAt) / 60000);
-    const remaining = duration - (elapsedMinutes % duration);
+if (timer) {
+    const duration = 5 * 60;
+    const startedAt = Date.now();
 
-    const hours = Math.floor(remaining / 60);
-    const minutes = remaining % 60;
+    function updateTimer() {
+        const elapsedMinutes = Math.floor((Date.now() - startedAt) / 60000);
+        const remaining = duration - (elapsedMinutes % duration);
+        const hours = Math.floor(remaining / 60);
+        const minutes = remaining % 60;
 
-    timer.textContent = `${hours}:${String(minutes).padStart(2, "0")}`;
+        timer.textContent = `${hours}:${String(minutes).padStart(2, "0")}`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
 }
 
-updateTimer();
-setInterval(updateTimer, 1000);
-
-
-// 取り出す方法モーダルウィンドウ
+// 取り出す方法モーダル
 const methodModal = document.querySelector("#method-modal");
 const methodModalClose = document.querySelector(".main__method-modal-close");
 const methodSlides = [...document.querySelectorAll(".main__method-slide")];
 const methodDots = [...document.querySelectorAll(".main__method-dot")];
+const methodBack = document.querySelector(".main__method-back");
 const methodNext = document.querySelector(".main__method-next");
 
 let currentMethodPage = 0;
@@ -63,8 +39,12 @@ function showMethodPage(index) {
         dot.classList.toggle("is-active", i === index);
     });
 
-    methodNext.textContent =
-        index === methodSlides.length - 1 ? "完了" : "次へ";
+    const isFirstPage = index === 0;
+    const isLastPage = index === methodSlides.length - 1;
+
+    methodBack.hidden = isFirstPage;
+    methodNext.textContent = isLastPage ? "完了" : "次へ";
+    methodNext.classList.toggle("is-complete", isLastPage);
 }
 
 document.querySelectorAll(".main__method").forEach((button) => {
@@ -74,13 +54,18 @@ document.querySelectorAll(".main__method").forEach((button) => {
     });
 });
 
+methodBack.addEventListener("click", () => {
+    if (currentMethodPage > 0) {
+        showMethodPage(currentMethodPage - 1);
+    }
+});
+
 methodNext.addEventListener("click", () => {
     if (currentMethodPage === methodSlides.length - 1) {
         methodModal.hidden = true;
-        return;
+    } else {
+        showMethodPage(currentMethodPage + 1);
     }
-
-    showMethodPage(currentMethodPage + 1);
 });
 
 methodModalClose.addEventListener("click", () => {
@@ -94,7 +79,7 @@ methodModal.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && methodModal && !methodModal.hidden) {
         methodModal.hidden = true;
     }
 });
