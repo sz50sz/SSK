@@ -49,7 +49,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 .footer__inner {
   max-width: 30rem;
@@ -141,7 +141,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 1.875rem 1.25rem;
+  padding: 1.875rem 1.25rem 10rem;
   z-index: 1000;
   border-radius: 25px 25px 0 0;
   background-color: #FCF9F5;
@@ -156,6 +156,12 @@ body {
 }
 .map__detail-item {
   display: flex;
+}
+.map__detail-item dt {
+  width: 1.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .map__detail-close {
   display: block;
@@ -175,7 +181,7 @@ body {
   text-align: center;
   width: 100%;
   margin-top: 1.25rem;
-  padding: 1.875rem 1.25rem;
+  padding: 1.25rem 1.25rem;
   box-sizing: border-box;
   border: none;
   border-radius: 6.25rem;
@@ -187,9 +193,6 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
-}
-.map__button:hover {
-  background-color: #e5e5e5;
 }
 .map__button:active {
   transform: scale(0.98);
@@ -445,5 +448,167 @@ body {
   border-left: 2px solid #FCF9F5;
   border-bottom: 2px solid #FCF9F5;
   transform: rotate(45deg);
-  margin-left: 3px;
+  margin-left: 6px;
+}
+
+.leaflet-container img.leaflet-marker-icon,
+.leaflet-container img.leaflet-marker-shadow {
+  max-width: none;
+}
+
+.business {
+  --sidebar-width: clamp(220px, 30vw, 350px);
+  background-color: #FCF9F5;
+}
+.business__header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: var(--sidebar-width);
+  padding: 3.125rem 0 0 4.5rem;
+  background-color: #FFD873;
+}
+.business__logo {
+  width: 70%;
+  max-width: 12.5rem;
+  aspect-ratio: 4/1;
+  background-color: #d9d9d9;
+}
+.business__name {
+  margin-top: 3.125rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.business__navi {
+  margin-top: 1.875rem;
+}
+.business__main {
+  margin-left: var(--sidebar-width);
+  padding: 5rem 5.625rem 2.5rem 1.875rem;
+}
+.business__table {
+  margin-top: 1.0625rem;
+}
+
+.navi__item a {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+  height: 4.375rem;
+  padding-left: 1.875rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border: 1px solid transparent;
+  border-right: none;
+  border-radius: 1.25rem 0 0 1.25rem;
+}
+.navi__item--active a {
+  background-color: #FCF9F5;
+  border-color: #492F04;
+}
+
+.search {
+  display: flex;
+  gap: 1.25rem;
+}
+.search__item {
+  width: 12.5rem;
+}
+.search__item--location {
+  width: 15.4375rem;
+}
+.search__item select {
+  width: 100%;
+  height: 2.6875rem;
+  padding: 0 2.5rem 0 0.9375rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: rgba(73, 47, 4, 0.3);
+  background-color: #FCF9F5;
+  border: 1px solid #492F04;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='10' viewBox='0 0 16 10' fill='none' stroke='%23492F04' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 2l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9375rem center;
+  background-size: 0.875rem;
+}
+
+.table {
+  padding-bottom: 0.9375rem;
+  border: 1px solid #492F04;
+  border-radius: 0.9375rem;
+  overflow: hidden;
+}
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.table th:nth-child(1) {
+  width: 18%;
+}
+.table th:nth-child(2) {
+  width: 36%;
+}
+.table th:nth-child(3) {
+  width: 20%;
+}
+.table th:nth-child(4) {
+  width: 26%;
+}
+.table th,
+.table td {
+  border: none;
+  border-bottom: 1px solid #492F04;
+  font-size: 1rem;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.table th {
+  height: 4.4375rem;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  text-align: center;
+}
+.table td {
+  height: 3.6875rem;
+  padding-left: 3.125rem;
+  text-align: left;
+}
+.table td:first-child {
+  padding-left: 0;
+  text-align: center;
+}
+
+.stock {
+  margin-right: 0.125rem;
+}
+.stock--low {
+  color: #FFD873;
+}
+.stock--normal {
+  color: #E86246;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 6.25rem;
+  font-size: 0.875rem;
+  color: #FCF9F5;
+}
+.status--need {
+  background-color: #E86246;
+}
+.status--none {
+  background-color: #6B8476;
 }/*# sourceMappingURL=style-yoshizawa.css.map */

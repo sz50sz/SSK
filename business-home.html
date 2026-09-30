@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>sotto MAP</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="./JS/index-yoshizawa.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="./sass/style-yoshizawa.css">
+</head>
+
+
+<body class="desktop business">
+
+    <!-- サイドバー -->
+    <header class="business__header">
+
+        <h1 class="business__logo"></h1>
+
+        <h2 class="business__name">オレっち</h2>
+
+        <nav class="business__navi navi">
+            <ul class="navi__list">
+
+                <li class="navi__item navi__item--active">
+                    <a href="#">
+                        <span class="navi__icon"></span>
+                        ホーム
+                    </a>
+                </li>
+
+                <li class="navi__item">
+                    <a href="#">
+                        <span class="navi__icon"></span>
+                        お知らせ
+                    </a>
+                </li>
+
+                <li class="navi__item">
+                    <a href="#">
+                        <span class="navi__icon"></span>
+                        お問い合わせ
+                    </a>
+                </li>
+
+                <li class="navi__item">
+                    <a href="#">
+                        <span class="navi__icon"></span>
+                        設定
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- メイン -->
+    <main class="business__main">
+
+        <!-- 検索 -->
+        <section class="business__search search">
+
+            <div class="search__item">
+                <select>
+                    <option>在庫数検索</option>
+                    <option>在庫あり</option>
+                    <option>在庫少なめ</option>
+                </select>
+            </div>
+
+            <div class="search__item search__item--location">
+                <select>
+                    <option>設置場所検索</option>
+                    <option>ららぽーと2F東側</option>
+                    <option>ららぽーと2F西側</option>
+                </select>
+            </div>
+
+            <div class="search__item">
+                <select>
+                    <option>補充検索</option>
+                    <option>必要</option>
+                    <option>不要</option>
+                </select>
+            </div>
+
+        </section>
+
+
+        <!-- 一覧 -->
+        <section class="business__table table">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>機械番号</th>
+                        <th>設置場所</th>
+                        <th>在庫数</th>
+                        <th>補充状況</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側</td>
+                        <td>
+                            <span class="stock stock--low">
+                                ▲
+                            </span>
+                            少なめ
+                        </td>
+                        <td>
+                            <span class="status status--need">必要</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側かもしれない</td>
+                        <td>
+                            <span class="stock stock--normal">
+                                ◎
+                            </span>
+                            在庫あり
+                        </td>
+                        <td>
+                            <span class="status status--none">不要</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側</td>
+                        <td>
+                            <span class="stock stock--low">
+                                ▲
+                            </span>
+                            少なめ
+                        </td>
+                        <td>
+                            <span class="status status--none">不要</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側</td>
+                        <td>
+                            <span class="stock stock--low">
+                                ▲
+                            </span>
+                            少なめ
+                        </td>
+                        <td>
+                            <span class="status status--none">不要</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側</td>
+                        <td>
+                            <span class="stock stock--low">
+                                ▲
+                            </span>
+                            少なめ
+                        </td>
+                        <td>
+                            <span class="status status--none">不要</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側</td>
+                        <td>
+                            <span class="stock stock--low">
+                                ▲
+                            </span>
+                            少なめ
+                        </td>
+                        <td>
+                            <span class="status status--none">不要</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側</td>
+                        <td>
+                            <span class="stock stock--low">
+                                ▲
+                            </span>
+                            少なめ
+                        </td>
+                        <td>
+                            <span class="status status--none">不要</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側</td>
+                        <td>
+                            <span class="stock stock--low">
+                                ▲
+                            </span>
+                            少なめ
+                        </td>
+                        <td>
+                            <span class="status status--none">不要</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側</td>
+                        <td>
+                            <span class="stock stock--low">
+                                ▲
+                            </span>
+                            少なめ
+                        </td>
+                        <td>
+                            <span class="status status--none">不要</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>CV5025</td>
+                        <td>ららぽーと2F東側</td>
+                        <td>
+                            <span class="stock stock--low">
+                                ▲
+                            </span>
+                            少なめ
+                        </td>
+                        <td>
+                            <span class="status status--none">不要</span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

@@ -143,14 +143,6 @@ detailClose.addEventListener(
 );
 
 
-// 戻るボタン
-backButton.addEventListener(
-    "click",
-    () => {
-        closeLocationDetail();
-    }
-);
-
 // =========================================================
 // Google Mapsで表示
 // =========================================================

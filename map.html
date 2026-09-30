@@ -4,12 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>sotto MAP</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
-    <script src="./JS/index-yoshizawa.js" defer></script>
+
+    <!-- CSS Reset -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- 自分のCSS -->
     <link rel="stylesheet" href="./sass/style-yoshizawa.css">
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer>
+    </script>
+
+    <!-- 自分のJS -->
+    <script src="./JS/index-yoshizawa.js" defer>
+    </script>
 </head>
 
 <body class="map__page">
@@ -41,17 +56,17 @@
             <dl class="map__detail-info">
 
                 <div class="map__detail-item">
-                    <dt>⭐️</dt>
+                    <dt><i class="fa-regular fa-clock"></i></dt>
                     <dd id="location-detail-hours"></dd>
                 </div>
 
                 <div class="map__detail-item">
-                    <dt>⭐️</dt>
+                    <dt><i class="fa-solid fa-map-pin"></i></dt>
                     <dd id="location-detail-address"></dd>
                 </div>
 
                 <div class="map__detail-item">
-                    <dt>⭐️</dt>
+                    <dt><i class="fa-solid fa-box-archive"></i></dt>
                     <dd id="location-detail-stock"></dd>
                 </div>
 
