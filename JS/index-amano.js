@@ -1,28 +1,3 @@
-// QRコードのモーダルウィンドウ
-const openButton = document.querySelector(".main__takeout-btn");
-const modal = document.querySelector("#qr-modal");
-const closeButton = document.querySelector(".qr-modal__close");
-
-openButton.addEventListener("click", () => {
-    modal.hidden = false;
-});
-
-closeButton.addEventListener("click", () => {
-    modal.hidden = true;
-});
-
-modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        modal.hidden = true;
-    }
-});
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !modal.hidden) {
-        modal.hidden = true;
-    }
-});
-
 
 // 次受け取れるまでの残り時間
 const timer = document.querySelector("#timer");

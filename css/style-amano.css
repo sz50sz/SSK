@@ -292,14 +292,25 @@ img {
   justify-content: center;
   width: 40px;
   height: 40px;
-  padding-bottom: 5px;
+  padding: 0;
+  border: 0;
   border-radius: 50%;
-  color: #FCF9F5;
   background-color: #6B8476;
-  text-align: center;
-  font-size: 35px;
-  line-height: 1;
   cursor: pointer;
+}
+.qr-modal__close::before, .qr-modal__close::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #FCF9F5;
+}
+.qr-modal__close::before {
+  transform: rotate(45deg);
+}
+.qr-modal__close::after {
+  transform: rotate(-45deg);
 }
 
 /* -------------------- マイページ -------------------- */
@@ -386,6 +397,7 @@ img {
   padding-top: 140px;
 }
 .rm__title {
+  margin-bottom: 20px;
   font-size: 1.25rem;
   font-weight: bold;
 }
@@ -399,7 +411,6 @@ img {
   padding: 0;
 }
 .rm__unit-label {
-  margin-top: 20px;
   display: inline-flex;
   align-items: center;
   font-weight: 600;
@@ -540,5 +551,91 @@ img {
   background-color: #fff;
   border: 1px solid #492F04;
   transition: transform 0.2s;
+}
+
+.ct__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 140px;
+}
+.ct__title {
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.ct__form {
+  display: grid;
+}
+.ct__unit {
+  border: none;
+  padding: 0;
+}
+.ct__unit-label {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+}
+.ct__unit-input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 20px 15px;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #492F04;
+}
+.ct__unit-input::-moz-placeholder {
+  opacity: 0.5;
+  color: #492F04;
+}
+.ct__unit-input::placeholder {
+  opacity: 0.5;
+  color: #492F04;
+}
+.ct__unit-content {
+  font-weight: 600;
+}
+.ct__unit-contentbox {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 305px;
+  margin-top: 10px;
+  padding: 20px 15px;
+  border-radius: 15px;
+  line-height: 1.6;
+  resize: vertical;
+  background-color: #fff;
+  border: 1px solid #492F04;
+}
+.ct__unit-contentbox::-moz-placeholder {
+  opacity: 0.5;
+  color: #492F04;
+}
+.ct__unit-contentbox::placeholder {
+  opacity: 0.5;
+  color: #492F04;
+}
+.ct__unit-notice {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #6B8476;
+  font-weight: bold;
+}
+.ct__contents {
+  margin-top: 20px;
+}
+.ct__btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 50px 0 170px 0;
+  padding: 20px;
+  border-radius: 100rem;
+  background-color: #FFD873;
+  border: 1px solid #492F04;
 }
 /*# sourceMappingURL=style-amano.css.map */

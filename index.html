@@ -77,10 +77,10 @@
     </div>
 
     <div class="qr-modal" id="qr-modal" hidden>
-        <div class="qr-modal__content" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
-            <button type="button" class="qr-modal__close" aria-label="閉じる">×</button>
+        <div class="qr-modal__content" role="dialog" aria-modal="true" aria-labelledby="qr-modal-h2">
+            <button type="button" class="qr-modal__close" aria-label="閉じる"></button>
             <h2 class="qr-modal-h2" id="qr-modal-h2">QRコードを<br>スキャンしてください</h2>
-            <img src="./images/qrcode_www.kagome.co.jp.png" alt="読み取り用QRコード">
+            <div id="qr-code" aria-label="端末ごとのQRコード"></div>
         </div>
     </div>
 
@@ -116,6 +116,7 @@
             </nav>
         </div>
     </footer>
+    <script src="./JS/qr-code.js"></script>
     <script src="./JS/index-amano.js"></script>
 </body>
 
