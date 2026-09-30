@@ -386,6 +386,8 @@ body {
 }
 
 .article {
+    background-color: $color-base;
+
     &__detail {
         display: flex;
         align-items: center;

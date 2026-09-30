@@ -251,6 +251,9 @@ body {
   padding-bottom: 1.25rem;
 }
 
+.article {
+  background-color: #FCF9F5;
+}
 .article__detail {
   display: flex;
   align-items: center;
