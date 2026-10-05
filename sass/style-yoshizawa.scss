@@ -747,6 +747,7 @@ $business-sidebar-width: 400px;
         select {
             width: 100%;
             height: rem(43);
+            line-height: rem(43);
             padding: 0 rem(40) 0 rem(15);
             font-family: inherit;
             font-size: rem(16);
@@ -856,5 +857,188 @@ $business-sidebar-width: 400px;
 
     &--none {
         background-color: $color-accent;
+    }
+}
+
+
+// =================================================================
+// Business News
+// =================================================================
+
+.business-news {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    padding: rem(80) rem(90) rem(80) rem(50);
+    box-sizing: border-box;
+    background-color: $color-base;
+
+    &__inner {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    &__list {
+        display: grid;
+        row-gap: 0;
+    }
+
+    &__item {
+        display: block;
+        padding: rem(25) rem(30);
+        border-bottom: 1px solid rgba($color: $color-bg, $alpha: 0.3);
+        background-color: $color-base;
+
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: #fff;
+        }
+    }
+
+    &__detail {
+        display: flex;
+        align-items: center;
+        column-gap: rem(15);
+        margin-bottom: rem(12);
+    }
+
+    &__date {
+        font-size: rem(14);
+    }
+
+    &__tag {
+        padding: rem(5) rem(12);
+        background-color: $color-main;
+        border-radius: rem(30);
+        font-size: rem(13);
+    }
+
+    &__title {
+        margin: 0;
+        font-size: rem(18);
+        font-weight: bold;
+    }
+}
+
+// =================================================================
+// Business Article
+// =================================================================
+
+.business-article {
+    // サイドバーの右側いっぱい
+    margin-left: var(--sidebar-width);
+
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding: rem(80) rem(100);
+
+    background-color: $color-base;
+
+
+    // -------------------------------------------------------------
+    // 記事全体
+    // -------------------------------------------------------------
+
+    &__inner {
+        width: 100%;
+        max-width: rem(1000);
+
+        margin: 0 auto;
+    }
+
+
+    // -------------------------------------------------------------
+    // 戻るボタン
+    // -------------------------------------------------------------
+
+    &__back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: rem(40);
+        height: rem(40);
+
+        margin-bottom: rem(50);
+
+        border-radius: 50%;
+
+        background-color: $color-accent;
+
+        span {
+            display: block;
+
+            width: rem(9);
+            height: rem(9);
+
+            border-left: 2px solid $color-base;
+            border-bottom: 2px solid $color-base;
+
+            transform: rotate(45deg);
+
+            margin-left: rem(5);
+        }
+    }
+
+
+    // -------------------------------------------------------------
+    // 日付・タグ
+    // -------------------------------------------------------------
+
+    &__detail {
+        display: flex;
+        align-items: center;
+
+        gap: rem(15);
+
+        margin-bottom: rem(20);
+    }
+
+
+    &__date {
+        font-size: rem(14);
+    }
+
+
+    &__tag {
+        padding: rem(5) rem(12);
+
+        background-color: $color-main;
+
+        border-radius: rem(30);
+
+        font-size: rem(13);
+        font-weight: bold;
+    }
+
+
+    // -------------------------------------------------------------
+    // タイトル
+    // -------------------------------------------------------------
+
+    &__title {
+        margin: 0;
+
+        font-size: rem(28);
+        font-weight: bold;
+        line-height: 1.5;
+    }
+
+
+    // -------------------------------------------------------------
+    // 本文
+    // -------------------------------------------------------------
+
+    &__text {
+        max-width: rem(850);
+
+        margin-top: rem(40);
+
+        font-size: rem(16);
+        line-height: 2;
     }
 }
