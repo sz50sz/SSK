@@ -105,6 +105,10 @@ img {
         grid-column: 2;
         font-size: rem(22);
         font-weight: bold;
+
+        &-pic {
+            width: 120px;
+        }
     }
 
     /* お知らせボタン */
@@ -386,6 +390,8 @@ img {
         margin-bottom: 15px;
 
         &-btn {
+            display: block;
+            margin: 0 auto;
             padding: 20px 100px;
             background-color: #FFD873;
             border: 1px solid #492F04;
