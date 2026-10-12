@@ -909,7 +909,8 @@ $business-sidebar-width: 400px;
 
     &__tag {
         padding: rem(5) rem(12);
-        background-color: $color-main;
+        background-color: $color-accent;
+        color: $color-base;
         border-radius: rem(30);
         font-size: rem(13);
     }
@@ -946,8 +947,11 @@ $business-sidebar-width: 400px;
     &__inner {
         width: 100%;
         max-width: rem(1000);
-
         margin: 0 auto;
+        background-color: #fff;
+        border: 1px solid $color-text;
+        border-radius: 25px;
+        padding: rem(50);
     }
 
 
@@ -956,18 +960,15 @@ $business-sidebar-width: 400px;
     // -------------------------------------------------------------
 
     &__back {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        width: rem(40);
-        height: rem(40);
-
-        margin-bottom: rem(50);
-
-        border-radius: 50%;
-
-        background-color: $color-accent;
+        display: block;
+        width: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+        padding: rem(15) rem(50);
+        border-radius: rem(100);
+        border: 1px solid $color-text;
+        margin-top: rem(30);
+        background-color: $color-main;
 
         span {
             display: block;
@@ -1006,11 +1007,9 @@ $business-sidebar-width: 400px;
 
     &__tag {
         padding: rem(5) rem(12);
-
-        background-color: $color-main;
-
+        background-color: $color-accent;
+        color: $color-base;
         border-radius: rem(30);
-
         font-size: rem(13);
         font-weight: bold;
     }
@@ -1040,5 +1039,460 @@ $business-sidebar-width: 400px;
 
         font-size: rem(16);
         line-height: 2;
+    }
+}
+
+// =================================================================
+// Contact
+// =================================================================
+
+.mr {
+    min-height: 100vh;
+    background-color: $color-base;
+}
+
+// -----------------------------------------------------------------
+// Header
+// -----------------------------------------------------------------
+
+.mh {
+    position: relative;
+    z-index: 1;
+
+    &__inner {
+        @include inner(1000px, 90%);
+        padding-top: rem(30);
+    }
+
+    &__unit {
+        display: flex;
+        align-items: center;
+        gap: rem(15);
+    }
+
+    &__back-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: rem(40);
+        height: rem(40);
+
+        border-radius: 50%;
+        background-color: $color-accent;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: rem(10);
+            height: rem(10);
+
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+
+            transform: rotate(45deg);
+            margin-left: rem(4);
+        }
+    }
+
+    &__title {
+        font-size: rem(20);
+        font-weight: bold;
+    }
+}
+
+// -----------------------------------------------------------------
+// Main
+// -----------------------------------------------------------------
+
+.ct {
+    width: calc(100% - var(--sidebar-width, 0px));
+    margin-left: var(--sidebar-width, 0px);
+    min-height: 100vh;
+    padding: rem(80) rem(60);
+
+    box-sizing: border-box;
+
+    &__inner {
+        width: 100%;
+        max-width: rem(1000);
+        margin: 0 auto;
+    }
+
+    // -------------------------------------------------------------
+    // Title
+    // -------------------------------------------------------------
+
+    &__title {
+        margin-bottom: rem(30);
+
+        font-size: rem(24);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    // -------------------------------------------------------------
+    // Form
+    // -------------------------------------------------------------
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(25);
+
+        padding: rem(50);
+
+        background-color: #fff;
+        border: 1px solid $color-text;
+        border-radius: rem(15);
+
+        box-sizing: border-box;
+    }
+
+    // -------------------------------------------------------------
+    // Input
+    // -------------------------------------------------------------
+
+    &__unit {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__unit-label {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: rem(15);
+
+        margin-bottom: rem(12);
+
+        font-size: rem(18);
+        font-weight: bold;
+    }
+
+    // 必須バッジ
+    &__required {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        min-width: rem(60);
+        height: rem(34);
+        padding: 0 rem(12);
+
+        box-sizing: border-box;
+
+        background-color: $color-red;
+        color: #fff;
+
+        border-radius: rem(100);
+
+        font-size: rem(14);
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    // 入力欄
+    &__unit-input {
+        display: block;
+        width: 100%;
+        height: rem(60);
+
+        padding: 0 rem(15);
+
+        box-sizing: border-box;
+
+        border: none;
+        border-radius: rem(15);
+
+        background-color: #EEECE9;
+        color: $color-text;
+
+        font-family: inherit;
+        font-size: rem(16);
+
+        outline: none;
+
+        transition:
+            background-color 0.2s ease,
+            box-shadow 0.2s ease;
+
+        &::placeholder {
+            color: #B9AEA0;
+            opacity: 1;
+        }
+
+        &:focus {
+            background-color: #fff;
+            box-shadow: 0 0 0 2px $color-accent;
+        }
+    }
+
+    // -------------------------------------------------------------
+    // Textarea
+    // -------------------------------------------------------------
+
+    &__contents {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__unit-contentbox {
+        display: block;
+        width: 100%;
+        min-height: rem(200);
+
+        padding: rem(15);
+
+        box-sizing: border-box;
+
+        border: none;
+        border-radius: rem(15);
+
+        background-color: #EEECE9;
+        color: $color-text;
+
+        font-family: inherit;
+        font-size: rem(16);
+        line-height: 1.7;
+
+        resize: vertical;
+        outline: none;
+
+        &::placeholder {
+            color: #B9AEA0;
+            opacity: 1;
+        }
+
+        &:focus {
+            background-color: #fff;
+            box-shadow: 0 0 0 2px $color-accent;
+        }
+    }
+
+    // -------------------------------------------------------------
+    // Submit Button
+    // -------------------------------------------------------------
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(10);
+
+        width: rem(205);
+        min-height: rem(55);
+
+        margin: rem(10) auto 0;
+        padding: rem(15) rem(25);
+
+        box-sizing: border-box;
+
+        border: none;
+        border-radius: rem(100);
+
+        background-color: $color-red;
+        color: #fff;
+
+        font-family: inherit;
+        font-size: rem(16);
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition:
+            background-color 0.2s ease,
+            transform 0.2s ease;
+
+        i {
+            font-size: rem(14);
+        }
+
+        &:hover {
+            background-color: darken($color-red, 8%);
+        }
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+}
+
+// -----------------------------------------------------------------
+// Footer
+// -----------------------------------------------------------------
+
+.mr {
+    .footer {
+        display: none;
+    }
+}
+
+// -----------------------------------------------------------------
+// Responsive
+// -----------------------------------------------------------------
+
+@media (max-width: 768px) {
+    .mh {
+        &__inner {
+            width: 90%;
+            padding-top: rem(20);
+        }
+    }
+
+    .ct {
+        width: 100%;
+        margin-left: 0;
+        padding: rem(40) 5% rem(50);
+
+        &__title {
+            margin-bottom: rem(25);
+            font-size: rem(22);
+        }
+
+        &__form {
+            row-gap: rem(25);
+            padding: rem(25) rem(20);
+            border-radius: rem(15);
+        }
+
+        &__unit-label {
+            gap: rem(10);
+            font-size: rem(16);
+        }
+
+        &__required {
+            min-width: rem(50);
+            height: rem(28);
+            font-size: rem(12);
+        }
+
+        &__unit-input {
+            height: rem(55);
+            font-size: rem(14);
+        }
+
+        &__unit-contentbox {
+            min-height: rem(180);
+            font-size: rem(14);
+        }
+
+        &__btn {
+            width: 100%;
+            max-width: rem(240);
+        }
+    }
+}
+
+// =================================================================
+// Business Setting
+// =================================================================
+
+.business-setting {
+    // サイドバーの右側に配置
+    margin-left: var(--sidebar-width);
+
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+
+    padding: rem(100) rem(100) rem(30);
+
+    box-sizing: border-box;
+
+    background-color: $color-base;
+
+    // -------------------------------------------------------------
+    // 設定一覧の外枠
+    // -------------------------------------------------------------
+
+    &__inner {
+        width: 100%;
+        max-width: rem(1000);
+        min-height: calc(100vh - rem(170));
+
+        margin: 0 auto;
+        padding: rem(30) rem(25);
+
+        box-sizing: border-box;
+
+        background-color: #fff;
+
+        border: 1px solid $color-text;
+        border-radius: rem(15);
+    }
+
+    // -------------------------------------------------------------
+    // リスト
+    // -------------------------------------------------------------
+
+    &__list {
+        width: 100%;
+    }
+
+    // -------------------------------------------------------------
+    // 各項目
+    // -------------------------------------------------------------
+
+    &__item {
+        width: 100%;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $color-bg;
+        }
+    }
+
+    // -------------------------------------------------------------
+    // リンク
+    // -------------------------------------------------------------
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        min-height: rem(84);
+
+        padding: 0 rem(25);
+
+        box-sizing: border-box;
+
+        color: $color-text;
+
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: $color-base;
+        }
+    }
+
+    // -------------------------------------------------------------
+    // 項目名
+    // -------------------------------------------------------------
+
+    &__name {
+        font-size: rem(18);
+        font-weight: bold;
+    }
+
+    // -------------------------------------------------------------
+    // 右向き矢印
+    // -------------------------------------------------------------
+
+    &__arrow {
+        display: block;
+        flex-shrink: 0;
+
+        width: rem(12);
+        height: rem(12);
+
+        border-top: 2px solid $color-text;
+        border-right: 2px solid $color-text;
+
+        transform: rotate(45deg);
+
+        margin-right: rem(5);
     }
 }
