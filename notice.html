@@ -113,6 +113,35 @@
         </div>
     </footer>
     <script src="./JS/index-amano.js"></script>
+    <script>
+        (() => {
+            const key = "notification-settings-v1";
+            const switches = [...document.querySelectorAll(".rm__set-input")];
+
+            try {
+                const saved = JSON.parse(localStorage.getItem(key) || "[]");
+
+                switches.forEach((input, index) => {
+                    input.checked = saved[index] === true;
+                });
+            } catch (error) {
+                console.error("通知設定を読み込めませんでした", error);
+            }
+
+            switches.forEach((input) => {
+                input.addEventListener("change", () => {
+                    try {
+                        localStorage.setItem(
+                            key,
+                            JSON.stringify(switches.map((item) => item.checked))
+                        );
+                    } catch (error) {
+                        console.error("通知設定を保存できませんでした", error);
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>
