@@ -43,6 +43,9 @@ img {
   font-size: 1.375rem;
   font-weight: bold;
 }
+.header__logo-pic {
+  width: 120px;
+}
 .header__news {
   display: grid;
   place-items: center;
@@ -290,6 +293,8 @@ img {
   margin-bottom: 15px;
 }
 .main__takeout-btn {
+  display: block;
+  margin: 0 auto;
   padding: 20px 100px;
   background-color: #FFD873;
   border: 1px solid #492F04;
