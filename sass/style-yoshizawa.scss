@@ -680,10 +680,8 @@ $business-sidebar-width: 400px;
     }
 
     &__logo {
-        width: 70%;
-        max-width: rem(200);
-        aspect-ratio: 4 / 1; // 200×50 の比率を保つ
-        background-color: #d9d9d9;
+        width: 60%;
+        height: auto;
     }
 
     &__name {

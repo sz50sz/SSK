@@ -474,10 +474,8 @@ body {
   background-color: #FFD873;
 }
 .business__logo {
-  width: 70%;
-  max-width: 12.5rem;
-  aspect-ratio: 4/1;
-  background-color: #d9d9d9;
+  width: 60%;
+  height: auto;
 }
 .business__name {
   margin-top: 3.125rem;
